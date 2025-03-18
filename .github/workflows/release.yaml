@@ -46,6 +46,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.build.outputs.tag }}
+          name: ${{ steps.build.outputs.name }}
           files: |
             geosite.db
             geosite.db.sha256sum

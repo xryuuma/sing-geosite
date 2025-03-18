@@ -416,7 +416,8 @@ func release(source string, destination string, output string, cnOutput string, 
 	if err != nil {
 		return err
 	}
-	setActionOutput("tag", *sourceRelease.Name)
+	nameFields := strings.Fields(*sourceRelease.Name)
+	setActionOutput("tag", nameFields[len(nameFields) - 1])
 	return nil
 }
 
